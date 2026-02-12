@@ -76,16 +76,6 @@
 ## 窗口预览
 ![](screenshot/mian_win.png)
 
-## 数据存储说明
-
-- 默认采用简化文件存储（见 `electron/simpleStorage.js` 和 `SIMPLE_STORAGE_README.md`），所有数据（分类、快捷方式、设置）均以 JSON 文件形式保存在用户主目录的 `.shortcut-organizer` 文件夹下。
-- 支持 SQLite 数据库存储（如环境支持），可扩展。
-- 数据持久化，应用关闭后数据不会丢失。
-
-## 常见问题
-
-- 如遇数据未保存、加载失败等问题，请参考 `SIMPLE_STORAGE_README.md` 文档中的“故障排除”部分。
-
 ## 许可证
 
 MIT
