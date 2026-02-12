@@ -1,0 +1,42 @@
+{
+  "appId": "com.shortcut.organizer",
+  "productName": "Shortcut Organizer",
+  "directories": {
+    "output": "dist-electron"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "dist/static",
+      "to": "static"
+    }
+  ],
+  "win": {
+    "target": [
+      "nsis",
+      {
+        "target": "portable"
+      }
+    ],
+    "requestedExecutionLevel": "asInvoker",
+    "artifactName": "${productName}-${version}.${ext}",
+    "compression": "maximum",
+    "sign": false,
+    "icon": null
+  },
+  "portable": {
+    "artifactName": "${productName}-Portable-${version}.${ext}"
+  },
+  "mac": {
+    "target": "dmg",
+    "icon": "electron/assets/icon.icns"
+  },
+  "linux": {
+    "target": "AppImage",
+    "icon": "electron/assets/icon.png"
+  }
+}

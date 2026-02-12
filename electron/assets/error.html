@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>加载错误</title>
+  <style>
+    body {
+      font-family: 'Microsoft YaHei', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .error-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+    }
+    h1 {
+      color: #e74c3c;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    .error-code {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 4px;
+      font-family: monospace;
+      margin: 20px 0;
+    }
+    .suggestions {
+      text-align: left;
+      margin-top: 20px;
+    }
+    .suggestions li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <h1>应用加载错误</h1>
+    <p>抱歉，应用无法正确加载静态资源文件。这可能是由于资源文件路径配置不正确或文件缺失导致的。</p>
+    
+    <div class="error-code">
+      错误: 无法找到静态资源文件 (index.html)
+    </div>
+    
+    <div class="suggestions">
+      <h3>可能的解决方案:</h3>
+      <ul>
+        <li>确保应用正确安装，尝试重新安装应用</li>
+        <li>检查应用安装目录是否包含所需的静态资源文件</li>
+        <li>如果问题持续存在，请联系开发者获取支持</li>
+      </ul>
+    </div>
+    
+    <p>应用版本: 0.0.1</p>
+  </div>
+</body>
+</html>

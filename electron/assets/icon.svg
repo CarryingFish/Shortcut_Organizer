@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- 背景 -->
+  <rect width="512" height="512" rx="60" fill="#4285f4" />
+  
+  <!-- 快捷方式图标 -->
+  <g transform="translate(100, 100) scale(0.6)">
+    <!-- 文件夹 -->
+    <path d="M400 128H208c-8.8 0-16-7.2-16-16V80c0-8.8-7.2-16-16-16H112c-8.8 0-16 7.2-16 16v32c0 8.8-7.2 16-16 16H64c-35.3 0-64 28.7-64 64v224c0 35.3 28.7 64 64 64h336c35.3 0 64-28.7 64-64V192c0-35.3-28.7-64-64-64z" fill="#FFCA28"/>
+    
+    <!-- 箭头 -->
+    <path d="M320 320l-80-80m0 80l80-80" stroke="white" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="320" cy="320" r="24" fill="white"/>
+    <circle cx="240" cy="240" r="24" fill="white"/>
+  </g>
+  
+  <!-- 加号 -->
+  <g transform="translate(380, 380)">
+    <circle cx="0" cy="0" r="60" fill="#34A853"/>
+    <path d="M-30 0h60M0 -30v60" stroke="white" stroke-width="12" stroke-linecap="round"/>
+  </g>
+</svg>

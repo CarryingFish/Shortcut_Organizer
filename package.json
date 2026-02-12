@@ -1,0 +1,84 @@
+{
+  "name": "shortcut-organizer",
+  "private": true,
+  "version": "0.0.1",
+  "main": "electron/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently --kill-others \"vite --host --port 12345\" \"wait-on http://localhost:12345 && electron --no-console electron/main.js\"",
+    "build": "vite build --outDir dist/static && copy package.json dist && type nul > dist/build.flag",
+    "preview": "npm run build && set NODE_ENV=production && chcp 65001 && electron --no-console electron/main.js",
+    "dist": "npm run build && electron-builder",
+    "dist:portable": "npm run build && electron-builder --win portable",
+    "dist:inno": "npm run dist && iscc inno-setup.iss",
+    "dist:all": "npm run build && electron-builder && iscc inno-setup.iss"
+  },
+  "build": {
+    "appId": "com.shortcut.organizer",
+    "productName": "Shortcut Organizer",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**",
+      "electron/**",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "dist/static",
+        "to": "static"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        {
+          "target": "portable"
+        }
+      ],
+      "artifactName": "${productName}-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-Portable-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "快捷方式管理器"
+    }
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "better-sqlite3": "^12.2.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.9.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.3.0",
+    "recharts": "^2.15.1",
+    "sonner": "^2.0.2",
+    "tailwind-merge": "^3.0.2",
+    "uuid": "^9.0.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "electron": "^37.3.1",
+    "electron-builder": "^26.0.12",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "wait-on": "^8.0.4"
+  }
+}
