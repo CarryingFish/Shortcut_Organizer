@@ -43,7 +43,6 @@
 ├── index.html               # 前端HTML模板
 ├── package.json             # 项目依赖与脚本
 ├── electron-builder.json    # Electron 打包配置
-├── SIMPLE_STORAGE_README.md # 简化存储系统说明
 └── ...
 ```
 
@@ -73,6 +72,9 @@
    npm run preview
    ```
    构建并启动 Electron 应用预览生产版本。
+
+## 窗口预览
+![](screenshot/mian_win.png)
 
 ## 数据存储说明
 
